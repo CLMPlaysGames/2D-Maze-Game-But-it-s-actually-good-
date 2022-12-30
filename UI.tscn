@@ -1,0 +1,130 @@
+[gd_scene load_steps=18 format=2]
+
+[ext_resource path="res://Graphics/Collectable/sprite_0.png" type="Texture" id=1]
+[ext_resource path="res://Graphics/Collectable/sprite_1.png" type="Texture" id=2]
+[ext_resource path="res://Graphics/Collectable/sprite_2.png" type="Texture" id=3]
+[ext_resource path="res://Graphics/Collectable/sprite_3.png" type="Texture" id=4]
+[ext_resource path="res://Graphics/Collectable/sprite_4.png" type="Texture" id=5]
+[ext_resource path="res://Graphics/Collectable/sprite_5.png" type="Texture" id=6]
+[ext_resource path="res://Graphics/Collectable/sprite_6.png" type="Texture" id=7]
+[ext_resource path="res://Graphics/Collectable/sprite_7.png" type="Texture" id=8]
+[ext_resource path="res://Graphics/Collectable/sprite_8.png" type="Texture" id=9]
+[ext_resource path="res://Graphics/Coin.png" type="Texture" id=10]
+[ext_resource path="res://Fonts/comic_andy.ttf" type="DynamicFontData" id=11]
+[ext_resource path="res://Graphics/grass.png" type="Texture" id=12]
+[ext_resource path="res://Graphics/Um, Coin question mark.png" type="Texture" id=13]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 1 ), ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="DynamicFont" id=2]
+size = 42
+outline_size = 3
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 11 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 80
+outline_size = 7
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 11 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 80
+outline_size = 7
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 11 )
+
+[node name="UI" type="CanvasLayer"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+color = Color( 0, 0, 0, 1 )
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+margin_top = 43.1247
+margin_right = 40.0
+margin_bottom = 83.1247
+color = Color( 0, 0, 0, 1 )
+
+[node name="ColorRect3" type="ColorRect" parent="."]
+margin_left = -0.406815
+margin_top = 87.063
+margin_right = 39.5932
+margin_bottom = 127.063
+color = Color( 0, 0, 0, 1 )
+
+[node name="Sprite" type="AnimatedSprite" parent="."]
+position = Vector2( 20.2401, 8.84869 )
+scale = Vector2( 2.03616, 2.03616 )
+frames = SubResource( 1 )
+
+[node name="Sprite2" type="Sprite" parent="."]
+position = Vector2( 20.0367, 60.5169 )
+scale = Vector2( 2.03616, 2.03616 )
+texture = ExtResource( 10 )
+
+[node name="Collectables" type="Label" parent="."]
+margin_left = 47.1196
+margin_top = -8.12131
+margin_right = 87.1196
+margin_bottom = 90.8787
+custom_fonts/font = SubResource( 2 )
+text = "0
+"
+
+[node name="Special Coins" type="Label" parent="."]
+margin_left = 47.5265
+margin_top = 80.1622
+margin_right = 87.5265
+margin_bottom = 179.162
+custom_fonts/font = SubResource( 2 )
+text = "0
+"
+
+[node name="Coins" type="Label" parent="."]
+margin_left = 47.1196
+margin_top = 35.0034
+margin_right = 87.1196
+margin_bottom = 134.003
+custom_fonts/font = SubResource( 2 )
+text = "0
+"
+
+[node name="GameOver" type="Label" parent="."]
+visible = false
+margin_left = 169.529
+margin_top = 209.093
+margin_right = 340.529
+margin_bottom = 392.093
+custom_fonts/font = SubResource( 3 )
+text = "YOU LOSE!
+
+"
+
+[node name="GameWin" type="Node2D" parent="."]
+visible = false
+
+[node name="Sprite" type="Sprite" parent="GameWin"]
+position = Vector2( 266.454, 253.655 )
+z_index = -1
+texture = ExtResource( 12 )
+
+[node name="Label" type="Label" parent="GameWin"]
+margin_left = 152.426
+margin_top = 146.608
+margin_right = 347.426
+margin_bottom = 236.608
+custom_fonts/font = SubResource( 4 )
+text = "YOU WIN!"
+
+[node name="Sprite6" type="Sprite" parent="."]
+position = Vector2( 20.1884, 104.316 )
+scale = Vector2( 1.10807, 1.10807 )
+texture = ExtResource( 13 )

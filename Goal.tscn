@@ -1,0 +1,37 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Goal.gd" type="Script" id=1]
+[ext_resource path="res://Graphics/NES_Luigi.webp" type="Texture" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 10, 13.5101 )
+
+[node name="Goal" type="Area2D" groups=[
+"goal",
+]]
+script = ExtResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( -0.0215147, -0.0290776 )
+scale = Vector2( 0.110619, 0.110619 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -0.0808296, -0.141973 )
+shape = SubResource( 1 )
+
+[node name="down" type="RayCast2D" parent="."]
+enabled = true
+cast_to = Vector2( 0, 20 )
+
+[node name="up" type="RayCast2D" parent="."]
+enabled = true
+cast_to = Vector2( 0, -20 )
+
+[node name="right" type="RayCast2D" parent="."]
+enabled = true
+cast_to = Vector2( 20, 0 )
+
+[node name="left" type="RayCast2D" parent="."]
+enabled = true
+cast_to = Vector2( -20, 0 )
